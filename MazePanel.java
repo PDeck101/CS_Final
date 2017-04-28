@@ -17,10 +17,14 @@ public class MazePanel extends JPanel
 	private int[] y = {0,10,20,30};
 	private int x1 = 10;
 	private int y1 = 10;
+	private int mousePositionX = 0;
+	private int mousePositionY = 0;
 	private final int WINDOW_WIDTH = 600;
     private final int WINDOW_HEIGHT = 600;
 
-	/**
+	// Need a method to keep track of mouse's current position. 
+    
+    /**
 	 * Constructor
 	 */
 	public MazePanel()
@@ -75,6 +79,10 @@ public class MazePanel extends JPanel
 			g.fillRect(x[i], y[i], x1, y1);
 			//g.fillRect(0, 0, 10, 10);
 		}
+		
+		// paint cheese
+		g.setColor(Color.yellow);
+		g.fillRect(50+2, 60+2, x1-3, y1-3);
 			
 
 		// Super important do not delete
@@ -112,5 +120,19 @@ public class MazePanel extends JPanel
 		// Close the file.
 		inputFile.close();
 		*/
+	}
+	public int mousePositionX(int x)
+	{
+		return mousePositionX; // Change this to something other than x
+	}
+	
+	public int mousePositionY(int y)
+	{
+		return mousePositionY;
+	}
+	public boolean cheaseFound()
+	{
+		return false systematicMouse.getCurrentLocation; //cheesePosX == mouse.currentPosX && cheesePosY == mouse.currentPosY;
+														// mousePositionX == cheasePositionY && mousePositionY == cheasePositionY;
 	}
 }
